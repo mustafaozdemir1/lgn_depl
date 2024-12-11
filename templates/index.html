@@ -1,9 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="nl">
 <head>
-    <title>Sample app</title>
-    <link rel="stylesheet" href="/static/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Pagina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Calling via Gateway {{request.remote_addr}}</h1>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST">
+            <input type="text" name="username" class="input-field" placeholder="Gebruikersnaam" required><br>
+            <input type="password" name="password" class="input-field" placeholder="Wachtwoord" required><br>
+            <button type="submit" class="submit-btn">Inloggen</button>
+        </form>
+    </div>
 </body>
 </html>
